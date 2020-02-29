@@ -23,7 +23,6 @@ import { NgForByIntegerPipe } from './common/pipes/ng-for-by-integer.pipe';
   declarations: [
     AppComponent,
     NavbarComponent,
-    SideNavComponent,
     OwnersComponent,
     ChampionsComponent,
     DraftsComponent,
