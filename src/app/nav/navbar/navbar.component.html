@@ -1,26 +1,13 @@
-<mat-toolbar color="primary" *ngIf="navItems$ | async as navItems" layout="row">
+<mat-toolbar color="primary" layout="row">
     <div flex="25">
         <button mat-button>
-            <mat-icon>
-                sports_football
-            </mat-icon>
+            <mat-icon>sports_football</mat-icon>
             Legends Hall
         </button>
     </div>
     <div flex="75">
-        <button mat-button [matMenuTriggerFor]="owners">
-            Owners
-        </button>
-        <mat-menu #owners="matMenu">
-            <button mat-menu-item *ngFor="let owner of navItems.owners" routerLink="/owners">
-                {{owner.display_value}}
-            </button>
-        </mat-menu>
-        <button mat-button routerLink="/drafts">
-            Drafts
-        </button>
-        <button mat-button routerLink="/seasons">
-            Seasons 
-        </button>
+        <button mat-button routerLink="/owners">Owners</button>
+        <button mat-button routerLink="/drafts">Drafts</button>
+        <button mat-button routerLink="/seasons">Seasons </button>
     </div>
 </mat-toolbar>

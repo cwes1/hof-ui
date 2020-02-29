@@ -1,8 +1,13 @@
-<mat-expansion-panel>
+<mat-expansion-panel class="owner-panel">
     <mat-expansion-panel-header>
         <mat-panel-title>
             {{owner.nickname}}
         </mat-panel-title>
+        <mat-panel-description>
+            <div *ngFor="let i of owner.championship_count | ngForByInteger">
+                <mat-icon>star</mat-icon>
+            </div>
+        </mat-panel-description>
     </mat-expansion-panel-header>
         <app-owner-profile [owner]="owner"></app-owner-profile>
 </mat-expansion-panel>

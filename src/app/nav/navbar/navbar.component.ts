@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavbarService } from './navbar.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +11,5 @@ export class NavbarComponent {
 
   constructor(private service: NavbarService,
               private route: ActivatedRoute) { }
-
-  navItems$ = this.service.navItems$;
 
 }
