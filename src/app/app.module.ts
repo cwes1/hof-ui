@@ -12,7 +12,6 @@ import { NavbarComponent } from './nav/navbar/navbar.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { OwnersComponent } from './owners/owners.component';
-import { ChampionsComponent } from './champions/champions.component';
 import { DraftsComponent } from './drafts/drafts.component';
 import { DraftBoardComponent } from './drafts/draft-board/draft-board.component';
 import { OwnerProfileComponent } from './owners/owner-profile/owner-profile.component';
@@ -24,7 +23,6 @@ import { NgForByIntegerPipe } from './common/pipes/ng-for-by-integer.pipe';
     AppComponent,
     NavbarComponent,
     OwnersComponent,
-    ChampionsComponent,
     DraftsComponent,
     DraftBoardComponent,
     OwnerProfileComponent,
