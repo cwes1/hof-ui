@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { OwnerComponent } from './owner/owner.component';
+import { OwnersComponent } from './owners/owners.component';
+import { DraftsComponent } from './drafts/drafts.component';
 
 
 const routes: Routes = [
-  {path: 'owner', component: OwnerComponent}
+  {path: 'owners', component: OwnersComponent},
+  {path: 'drafts', component: DraftsComponent }
 ];
 
 @NgModule({

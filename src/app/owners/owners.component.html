@@ -1,0 +1,7 @@
+<div *ngIf="data$ | async as data">
+    <mat-accordion>
+        <div *ngFor="let owner of data.activeOwners">
+            <app-owner-panel [owner]="owner"></app-owner-panel>
+        </div>
+    </mat-accordion>
+</div>

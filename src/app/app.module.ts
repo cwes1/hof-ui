@@ -8,21 +8,29 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './nav/navbar/navbar.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
-import { OwnerComponent } from './owner/owner.component';
+import { OwnersComponent } from './owners/owners.component';
 import { ChampionsComponent } from './champions/champions.component';
 import { DraftsComponent } from './drafts/drafts.component';
 import { DraftBoardComponent } from './drafts/draft-board/draft-board.component';
+import { OwnerProfileComponent } from './owners/owner-profile/owner-profile.component';
+import { OwnerPanelComponent } from './owners/owner-panel/owner-panel.component';
+import { NgForByIntegerPipe } from './common/pipes/ng-for-by-integer.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    OwnerComponent,
+    SideNavComponent,
+    OwnersComponent,
     ChampionsComponent,
     DraftsComponent,
-    DraftBoardComponent
+    DraftBoardComponent,
+    OwnerProfileComponent,
+    OwnerPanelComponent,
+    NgForByIntegerPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,8 @@ import { DraftBoardComponent } from './drafts/draft-board/draft-board.component'
     MatMenuModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
