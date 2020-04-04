@@ -4,15 +4,13 @@ import { OwnersService } from './owners.service';
 @Component({
   selector: 'app-owners',
   templateUrl: './owners.component.html',
-  styleUrls: ['./owners.component.sass']
+  styleUrls: ['./owners.component.scss']
 })
-export class OwnersComponent implements OnInit {
+export class OwnersComponent {
 
   data$ = this.service.ownersViewData$;
+  displayMode = 'flat';
 
   constructor(private service: OwnersService) { }
-
-  ngOnInit() {
-  }
 
 }

@@ -4,7 +4,7 @@ import { Owner } from 'src/app/api/models';
 @Component({
   selector: 'app-owner-panel',
   templateUrl: './owner-panel.component.html',
-  styleUrls: ['./owner-panel.component.sass'],
+  styleUrls: ['./owner-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OwnerPanelComponent implements OnInit {

@@ -1,0 +1,10 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mat-expansion-panel-body {
+    padding: 0 !important;
+}
+
+.mat-expansion-panel {
+    border: 0;
+    border-radius: 0px !important;
+}

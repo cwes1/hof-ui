@@ -1,0 +1,19 @@
+.owner-panel {
+    box-shadow: none;
+    
+    .header {
+        padding: 0;
+        background-color: #3b0d11;
+        border-radius: 0 4px 0 4px;
+        
+        .description {
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .title-text {
+            vertical-align: middle;
+            color: white;
+        }
+    }
+}

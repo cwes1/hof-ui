@@ -15,7 +15,9 @@ export class OwnersService {
           ...owner,
           championship_count: Math.round((Math.random() * 5))
         })
-      ))
+      )),
+      // sort descending by chips
+      map(owners => owners.sort((a, b) => (a.championship_count < b.championship_count ? 1 : -1)))
     );
 
   activeOwners$ = this.owners$

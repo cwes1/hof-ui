@@ -1,0 +1,11 @@
+.owners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 4%;
+
+    .accordion {
+        width: 80%;
+    }
+}
