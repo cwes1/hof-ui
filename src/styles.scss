@@ -1,4 +1,18 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import  url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+@import '~@angular/material/theming';
+
+
+//font overrides
+$custom-typography: mat-typography-config(
+    $font-family: 'Source Sans Pro, sans-serif'
+);
+
+@include mat-core($custom-typography);
+
+html, body {
+    font-family: mat-font-family($custom-typography);
+}
 
 .mat-expansion-panel-body {
     padding: 0 !important;

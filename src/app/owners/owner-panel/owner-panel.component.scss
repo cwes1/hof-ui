@@ -2,18 +2,17 @@
     box-shadow: none;
     
     .header {
-        padding: 0;
+        padding: 0 32px;
         background-color: #3b0d11;
-        border-radius: 0 4px 0 4px;
+        border-radius: 8px;
+        
+        .description, .title-text {
+            color: white;
+        }
         
         .description {
             justify-content: flex-end;
             align-items: center;
-        }
-
-        .title-text {
-            vertical-align: middle;
-            color: white;
         }
     }
 }
