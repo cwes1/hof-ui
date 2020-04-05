@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { map } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { combineLatest, BehaviorSubject } from 'rxjs';
+import { Owner } from '../api/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OwnersService {
+
+  private selectedOwnerSource = new BehaviorSubject<Owner>(null);
+  selectedOwner$ = this.selectedOwnerSource.asObservable();
 
   owners$ = this.apiService.getAllOwners()
     .pipe(
@@ -17,7 +21,7 @@ export class OwnersService {
         })
       )),
       // sort descending by chips
-      map(owners => owners.sort((a, b) => (a.championship_count < b.championship_count ? 1 : -1)))
+      map(owners => owners.sort((a, b) => (b.championship_count - a.championship_count)))
     );
 
   activeOwners$ = this.owners$
@@ -25,15 +29,20 @@ export class OwnersService {
       map(owners => owners.filter(owner => owner.is_active))
     );
 
-  ownersViewData$ = combineLatest([this.owners$, this.activeOwners$])
+  ownersViewData$ = combineLatest([this.owners$, this.activeOwners$, this.selectedOwner$])
     .pipe(
-      map(([owners, activeOwners]) =>
+      map(([owners, activeOwners, selectedOwner]) =>
         ({
           owners,
-          activeOwners
+          activeOwners,
+          selectedOwner
         })
       )
     );
 
   constructor(private apiService: ApiService) { }
+
+  selectOwner(owner: Owner) {
+    this.selectedOwnerSource.next(owner);
+  }
 }

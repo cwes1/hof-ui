@@ -18,6 +18,7 @@ import { DraftBoardComponent } from './drafts/draft-board/draft-board.component'
 import { OwnerProfileComponent } from './owners/owner-profile/owner-profile.component';
 import { OwnerPanelComponent } from './owners/owner-panel/owner-panel.component';
 import { NgForByIntegerPipe } from './common/pipes/ng-for-by-integer.pipe';
+import { OwnerNameplateComponent } from './owners/owner-nameplate/owner-nameplate.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgForByIntegerPipe } from './common/pipes/ng-for-by-integer.pipe';
     DraftBoardComponent,
     OwnerProfileComponent,
     OwnerPanelComponent,
-    NgForByIntegerPipe
+    NgForByIntegerPipe,
+    OwnerNameplateComponent
   ],
   imports: [
     BrowserModule,

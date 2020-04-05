@@ -1,11 +1,8 @@
 .owners {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 3vh;
-
-    .accordion {
-        width: 85%;
+    .owners-plaque {
+      border: 1px solid black;
+      margin: 4em;
+      height: auto;
+      padding: 2em;
     }
 }

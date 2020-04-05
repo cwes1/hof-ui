@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { OwnersService } from './owners.service';
+import { Owner } from '../api/models';
 
 @Component({
   selector: 'app-owners',
@@ -9,8 +10,11 @@ import { OwnersService } from './owners.service';
 export class OwnersComponent {
 
   data$ = this.service.ownersViewData$;
-  displayMode = 'flat';
 
   constructor(private service: OwnersService) { }
+
+  selectOwner(owner: Owner) {
+    this.service.selectOwner(owner);
+  }
 
 }
