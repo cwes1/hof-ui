@@ -1,18 +1,31 @@
 .owner-panel {
     box-shadow: none;
-    
+
     .header {
-        padding: 0 32px;
-        background-color: #3b0d11;
+        padding: 0 1em;
+
         border-radius: 8px;
-        
-        .description, .title-text {
-            color: white;
+        height: 7.25vh !important;
+        background-color: rgb(108, 23, 30);
+
+        &:hover {
+          background-color: rgb(108, 23, 30, .7);
         }
-        
-        .description {
-            justify-content: flex-end;
-            align-items: center;
+
+        .plaque {
+          border: 1px solid black;
+          border-radius: -2em;
+          width: 100%;
+          padding: 0 1em;
+
+          .description, .title-text {
+            color: white;
+            width: auto;
+          }
+
+          .description {
+              margin: 0;
+          }
         }
     }
 }

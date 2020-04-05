@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './nav/navbar/navbar.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { OwnersComponent } from './owners/owners.component';
 import { DraftsComponent } from './drafts/drafts.component';
 import { DraftBoardComponent } from './drafts/draft-board/draft-board.component';
@@ -38,7 +39,8 @@ import { NgForByIntegerPipe } from './common/pipes/ng-for-by-integer.pipe';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

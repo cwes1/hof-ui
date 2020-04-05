@@ -11,7 +11,9 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 html, body {
-    font-family: mat-font-family($custom-typography);
+    font: {
+        family: mat-font-family($custom-typography);
+    }
 }
 
 .mat-expansion-panel-body {
