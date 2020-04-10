@@ -3,7 +3,7 @@
     <div class="title" fxLayoutAlign="center">
       <h2>The Legends Fantasy League</h2>
     </div>
-    <div class="nameplates" *ngIf="!data.selectedOwner" fxLayout="row wrap" fxLayoutAlign="start center">
+    <div class="nameplates" *ngIf="!data.selectedOwner" fxLayout="row wrap" fxLayoutAlign="space-between center">
       <app-owner-nameplate *ngFor="let owner of data.activeOwners" [owner]="owner" (click)="selectOwner(owner)">
       </app-owner-nameplate>
     </div>

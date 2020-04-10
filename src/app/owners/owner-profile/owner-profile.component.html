@@ -1,3 +1,19 @@
 <div class="profile">
-    <p>This will be {{owner.first_name}}'s profile</p>
+  <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+    <h1>{{owner | ownerProfileTitle }}</h1>
+    <mat-icon (click)="closeProfile()">close</mat-icon>
+  </div>
+  <div fxLayout="row" class="body">
+    <div class="left">
+      <p>{{owner.championship_count}} time champion</p>
+      <img src="assets/images/defaults/profile-picture.png">
+    </div>
+    <div class="right" fxLayoutAlign="center">
+      <mat-tab-group>
+        <mat-tab [label]="'stats' | uppercase"></mat-tab>
+        <mat-tab [label]="'keeper' | uppercase"></mat-tab>
+        <mat-tab [label]="'contact' | uppercase"></mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
 </div>

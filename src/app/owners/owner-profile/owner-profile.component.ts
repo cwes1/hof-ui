@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Owner } from 'src/app/api/models';
+import { OwnersService } from '../owners.service';
 
 @Component({
   selector: 'app-owner-profile',
@@ -11,9 +12,13 @@ export class OwnerProfileComponent implements OnInit {
 
   @Input() owner: Owner;
 
-  constructor() { }
+  constructor(private ownersService: OwnersService) { }
 
   ngOnInit() {
+  }
+
+  closeProfile() {
+    this.ownersService.selectOwner(null);
   }
 
 }
