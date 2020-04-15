@@ -21,6 +21,7 @@ import { OwnerProfileComponent } from './owners/owner-profile/owner-profile.comp
 import { NgForByIntegerPipe } from './common/pipes/ng-for-by-integer.pipe';
 import { OwnerNameplateComponent } from './owners/owner-nameplate/owner-nameplate.component';
 import { OwnerProfileTitlePipe } from './owners/pipes/owner-profile-title.pipe';
+import { OwnerListComponent } from './owners/owner-list/owner-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { OwnerProfileTitlePipe } from './owners/pipes/owner-profile-title.pipe';
     OwnerProfileComponent,
     NgForByIntegerPipe,
     OwnerNameplateComponent,
-    OwnerProfileTitlePipe
+    OwnerProfileTitlePipe,
+    OwnerListComponent
   ],
   imports: [
     BrowserModule,

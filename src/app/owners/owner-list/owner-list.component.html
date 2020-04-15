@@ -1,0 +1,13 @@
+<div
+  *ngIf="owners$ | async as owners"
+  class="nameplates"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-between center"
+>
+  <app-owner-nameplate
+    *ngFor="let owner of owners"
+    [owner]="owner"
+    (ownerSelected)="selectOwner(owner)"
+  >
+  </app-owner-nameplate>
+</div>

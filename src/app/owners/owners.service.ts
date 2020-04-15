@@ -9,8 +9,8 @@ import { Owner } from '../api/models';
 })
 export class OwnersService {
 
-  private selectedOwnerSource = new BehaviorSubject<Owner>(null);
-  selectedOwner$ = this.selectedOwnerSource.asObservable();
+  private selectedOwnerNicknameSource = new BehaviorSubject<string>(null);
+  selectedOwnerNickname$ = this.selectedOwnerNicknameSource.asObservable();
 
   owners$ = this.apiService.getAllOwners()
     .pipe(
@@ -18,11 +18,23 @@ export class OwnersService {
         ({
           ...owner,
           championship_count: Math.round((Math.random() * 5))
-        })
+        }) as Owner
       )),
       // sort descending by chips
       map(owners => owners.sort((a, b) => (b.championship_count - a.championship_count)))
     );
+
+  selectedOwner$ = combineLatest([this.selectedOwnerNickname$, this.owners$])
+    .pipe(
+      map(([nickname, owners]) => {
+        if (nickname) {
+          return owners.find(owner => owner.nickname.toLowerCase() === nickname.toLowerCase());
+        } else {
+          return null;
+        }
+      })
+    );
+
 
   activeOwners$ = this.owners$
     .pipe(
@@ -42,7 +54,7 @@ export class OwnersService {
 
   constructor(private apiService: ApiService) { }
 
-  selectOwner(owner: Owner) {
-    this.selectedOwnerSource.next(owner);
+  selectOwner(ownerNickname: string) {
+    this.selectedOwnerNicknameSource.next(ownerNickname);
   }
 }

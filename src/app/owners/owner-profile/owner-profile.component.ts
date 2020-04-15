@@ -1,24 +1,25 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { Owner } from 'src/app/api/models';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { OwnersService } from '../owners.service';
 
 @Component({
   selector: 'app-owner-profile',
   templateUrl: './owner-profile.component.html',
-  styleUrls: ['./owner-profile.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./owner-profile.component.scss']
 })
 export class OwnerProfileComponent implements OnInit {
 
-  @Input() owner: Owner;
+  owner$ = this.ownersService.selectedOwner$;
 
-  constructor(private ownersService: OwnersService) { }
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private ownersService: OwnersService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.ownersService.selectOwner(this.route.snapshot.params.nickname);
   }
 
   closeProfile() {
-    this.ownersService.selectOwner(null);
+    this.router.navigate(['/owners']);
   }
-
 }

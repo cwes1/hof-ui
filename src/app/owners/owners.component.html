@@ -1,12 +1,8 @@
-<div *ngIf="data$ | async as data" class="owners">
+<div class="owners">
   <div class="owners-plaque" fxLayout="column">
     <div class="title" fxLayoutAlign="center">
       <h2>The Legends Fantasy League</h2>
     </div>
-    <div class="nameplates" *ngIf="!data.selectedOwner" fxLayout="row wrap" fxLayoutAlign="space-between center">
-      <app-owner-nameplate *ngFor="let owner of data.activeOwners" [owner]="owner" (click)="selectOwner(owner)">
-      </app-owner-nameplate>
-    </div>
-    <app-owner-profile *ngIf="data.selectedOwner" [owner]="data.selectedOwner"></app-owner-profile>
+    <router-outlet></router-outlet>
   </div>
 </div>

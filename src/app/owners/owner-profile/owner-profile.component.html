@@ -1,4 +1,4 @@
-<div class="profile">
+<div *ngIf="owner$ | async as owner" class="profile">
   <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
     <h1>{{owner | ownerProfileTitle }}</h1>
     <mat-icon (click)="closeProfile()">close</mat-icon>
@@ -6,7 +6,7 @@
   <div fxLayout="row" class="body">
     <div class="left">
       <p>{{owner.championship_count}} time champion</p>
-      <img src="assets/images/defaults/profile-picture.png">
+      <img src="assets/defaults/images/profile/profile-picture.png">
     </div>
     <div class="right" fxLayoutAlign="center">
       <mat-tab-group>
