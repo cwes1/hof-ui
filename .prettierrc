@@ -1,0 +1,22 @@
+{
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "parser": "typescript",
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "*.*css",
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}
