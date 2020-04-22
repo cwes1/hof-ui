@@ -1,0 +1,5 @@
+karma.conf.js
+polyfills.ts
+dist/*
+node_modules/*
+.vscode/*

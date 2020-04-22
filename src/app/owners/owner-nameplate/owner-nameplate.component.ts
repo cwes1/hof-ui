@@ -6,16 +6,14 @@ import { NgForByIntegerPipe } from 'src/app/common/pipes/ng-for-by-integer.pipe'
   selector: 'app-owner-nameplate',
   templateUrl: './owner-nameplate.component.html',
   styleUrls: ['./owner-nameplate.component.scss'],
-  providers: [ NgForByIntegerPipe ]
+  providers: [NgForByIntegerPipe],
 })
 export class OwnerNameplateComponent {
-
   @Input() owner: Owner;
 
   @Output() ownerSelected = new EventEmitter();
 
-  selectOwner() {
+  selectOwner(): void {
     this.ownerSelected.emit(this.owner);
   }
-
 }
